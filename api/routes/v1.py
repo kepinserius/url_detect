@@ -4,11 +4,11 @@ from api.middleware.auth import get_api_key
 from api.middleware.rate_limit import rate_limiter
 from api.services.logger import prediction_logger
 from api.services.metrics import track_prediction
-from inference.predictor import Predictor
+from inference.hybrid_predictor import HybridPredictor
 import hashlib
 
 router = APIRouter()
-predictor = Predictor()
+predictor = HybridPredictor()
 
 @router.post("/check", response_model=URLCheckResponse, dependencies=[Depends(get_api_key)])
 def check_url(request: Request, payload: URLCheckRequest):
@@ -21,4 +21,8 @@ def check_url(request: Request, payload: URLCheckRequest):
     
     track_prediction(result["prediction"])
     
-    return result
+    return {
+        "prediction": result["prediction"],
+        "risk_score": result["risk_score"],
+        "confidence": result["confidence"]
+    }

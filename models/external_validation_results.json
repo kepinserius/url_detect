@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "accuracy": 0.4482758620689655,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "roc_auc": 0.20432692307692307,
+    "true_negatives": 13,
+    "false_positives": 0,
+    "false_negatives": 16,
+    "true_positives": 0,
+    "validation_size": 29
+  },
+  "confusion_matrix": [
+    [
+      13,
+      0
+    ],
+    [
+      16,
+      0
+    ]
+  ]
+}

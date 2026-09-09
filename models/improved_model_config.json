@@ -1,0 +1,35 @@
+{
+  "threshold": 0.7,
+  "features": [
+    "URLLength",
+    "DomainLength",
+    "IsDomainIP",
+    "URLSimilarityIndex",
+    "CharContinuationRate",
+    "TLDLegitimateProb",
+    "URLCharProb",
+    "TLDLength",
+    "NoOfSubDomain",
+    "HasObfuscation",
+    "NoOfObfuscatedChar",
+    "ObfuscationRatio",
+    "NoOfLettersInURL",
+    "LetterRatioInURL",
+    "NoOfDegitsInURL",
+    "DegitRatioInURL",
+    "NoOfEqualsInURL",
+    "NoOfQMarkInURL",
+    "NoOfAmpersandInURL",
+    "NoOfOtherSpecialCharsInURL",
+    "SpacialCharRatioInURL",
+    "IsHTTPS"
+  ],
+  "metrics": {
+    "roc_auc": 0.9998715090118073,
+    "f1_score": 0.9998702430162938,
+    "true_negatives": 20182,
+    "false_positives": 7,
+    "false_negatives": 0,
+    "true_positives": 26970
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": [
+      [
+        17,
+        0
+      ],
+      [
+        0,
+        19
+      ]
+    ],
+    "false_negative_rate": 0.0,
+    "false_positive_rate": 0.0
+  },
+  "test_summary": {
+    "total_urls": 36,
+    "phishing_urls": 19,
+    "legitimate_urls": 17,
+    "correct_predictions": 36
+  },
+  "false_negatives": [],
+  "false_positives": []
+}

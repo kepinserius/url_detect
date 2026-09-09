@@ -1,0 +1,26 @@
+url,label
+https://google.com,0
+https://facebook.com,0
+https://github.com,0
+https://example.com,0
+https://stackoverflow.com,0
+# Phishing examples (common patterns)
+https://paypal-verify-security-update.com,1
+http://secure-bank-login-auth.tk,1
+https://microsoft-account-security.xyz,1
+https://appleid-update-confirm.cc,1
+http://whatsapp-web-login-free.ru,1
+https://instagram-verification-code.online,1
+http://netflix-premium-account.club,1
+https://amazon-gift-card-claim.tk,1
+http://facebook-login-secure.ga,1
+https://twitter-verify-account.ml,1
+# Typosquatting
+https://facebok.com,1
+https://gooogle.com,1
+https://gogle.com,1
+https://youtube.com/login?service=signin,0
+# Suspicious patterns
+http://192.168.1.1/login,0
+https://10.0.0.1/admin,0
+http://localhost:8080/login,0
