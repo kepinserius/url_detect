@@ -1,0 +1,19 @@
+{
+  "tuned": true,
+  "best_params": {
+    "n_estimators": 185,
+    "max_depth": 6,
+    "learning_rate": 0.015474554358945139,
+    "subsample": 0.9601447549440565,
+    "colsample_bytree": 0.8224631495974609,
+    "gamma": 3.4478872006884305,
+    "reg_alpha": 9.104771546779757,
+    "reg_lambda": 0.0797858536089074
+  },
+  "cv_score": 0.9999907515071648,
+  "test_roc_auc": 1.0,
+  "test_f1": 1.0,
+  "training_rows": 188636,
+  "test_rows": 47159,
+  "feature_count": 50
+}

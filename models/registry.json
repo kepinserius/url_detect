@@ -1,0 +1,15 @@
+{
+  "active_model": "phishing-url-xgb-1.0.0",
+  "models": [
+    {
+      "name": "phishing-url-xgb",
+      "version": "1.0.0",
+      "file": "phishing_model.joblib",
+      "metrics": {
+        "accuracy": 1.0,
+        "roc_auc": 0.9999999999999999
+      },
+      "created_at": "2026-09-09"
+    }
+  ]
+}

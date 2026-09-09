@@ -1,61 +1,74 @@
-# Open Source Phishing URL Detection Platform
+# Phishing URL Detector
 
-An open-source phishing URL detection platform providing Machine Learning-based detection engine that can be trained, self-hosted, or consumed via REST API.
+Open-source phishing URL detection platform berbasis Machine Learning, siap untuk skala enterprise.
 
-## Features
+## Fitur Inti
+- Deteksi cepat berbasis fitur statis (tanpa visit URL).
+- REST API v1 dengan FastAPI, support versi enterprise.
+- Authentication via API keys dengan rate limiting.
+- Observabilitas lengkap: Log terstruktur, metrik Prometheus.
+- Self-hosting dengan Docker dan Kubernetes-ready.
+- Model XGBoost terlatih dengan dataset PhiUSIIL, model versioning registry.
 
-- **Static URL Analysis**: Analyzes URL features safely without making HTTP requests to submitted URLs.
-- **REST API**: Built with FastAPI, providing `/health` and `/v1/check` endpoints.
-- **Self-Hostable**: Easy deployment with Docker and Docker Compose.
-- **API First Design**: Versioned endpoints with structured JSON response.
+## Fitur Enterprise
+- **API Authentication & Authorization**: X-API-Key header.
+- **Rate Limiting & Quota Management**: Database-based multi-tenant quotas.
+- **Privacy First**: Redaksi otomatis PII dari URL.
+- **Observability**: Prometheus metrics endpoint `/metrics`.
+- **Structured Logging**: JSON logs dengan sanitasi sensitif.
+- **Load Testing Ready**: Script Locust untuk stress testing.
+- **Model Registry**: Version tracking dengan metadata.
+- **Database-backed**: SQLite untuk API key dan quotas.
 
-## Quick Start (Self-Hosting)
-
-### Using Docker Compose
-
-```bash
-docker compose up -d
-```
-
-The API will be available at `http://localhost:8000`.
-
-### Local Installation
-
+## Quick Start (Local)
 1. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-
-2. Run the API server:
+2. Inisialisasi database enterprise:
    ```bash
-   uvicorn api.main:app --host 0.0.0.0 --port 8000
+   python3 api/services/db.py
+   ```
+3. Jalankan API:
+   ```bash
+   PYTHONPATH=. uvicorn api.main:app --reload
    ```
 
-## API Usage Example
-
-### Check URL
-
+## Quick Start (Docker)
 ```bash
-curl -X POST "http://localhost:8000/v1/check" \
-     -H "Content-Type: application/json" \
-     -d '{"url": "https://example.com"}'
+docker-compose up --build
 ```
 
-Example Output:
-
-```json
-{
-  "prediction": "legitimate",
-  "risk_score": 5,
-  "confidence": 0.95,
-  "indicators": []
-}
+## API Usage (Basic)
+Cek URL:
+```bash
+curl -X POST http://localhost:8000/v1/check \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: your_api_key_here" \
+  -d '{"url": "https://example.com"}'
 ```
 
-## Project Architecture
+## Observability
+- Health check: `GET /health`
+- Prometheus metrics: `GET /metrics`
+- Auto-redaction: Token, password, email dalam logs.
 
-For detailed architecture and model documentation, see the `docs/` directory.
+## Testing
+Run unit & integration tests:
+```bash
+PYTHONPATH=. pytest
+```
 
-## License
+Load testing (Locust):
+```bash
+locust -f tests/load/locustfile.py
+```
 
-MIT License - see [LICENSE](LICENSE) for details.
+## Struktur Projek
+- `api/`: Kode sumber FastAPI, routes, middleware, services.
+- `inference/`: Engine prediksi dan ekstraksi fitur.
+- `models/`: Artifact model (.joblib), registry, enterprise database.
+- `training/`: Skrip pelatihan model.
+- `phishing_detector/`: Python SDK client.
+- `tests/`: Unit, integration, load tests.
+- `docs/`: Dokumentasi arsitektur dan API.

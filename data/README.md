@@ -1,4 +1,7 @@
-# Data Directory
+# Dataset Instructions
 
-This directory holds raw and processed datasets.
-Note: Raw datasets like PhiUSIIL Phishing URL Dataset should be placed in `data/raw/`.
+Download PhiUSIIL Phishing URL Dataset from UCI ML Repository:
+https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset
+
+Simpan dataset raw ke direktori:
+`data/raw/PhiUSIIL_Phishing_URL_Dataset.csv`
