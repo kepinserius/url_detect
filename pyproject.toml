@@ -3,7 +3,7 @@ requires = ["setuptools>=65.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "phishing-url-detector"
+name = "url_detect"
 version = "0.1.0"
 description = "Open-source phishing URL detection engine based on Machine Learning"
 readme = "README.md"
@@ -61,10 +61,10 @@ ml = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/kepinserius/phishing-url-detector"
-Documentation = "https://github.com/kepinserius/phishing-url-detector#documentation"
-Repository = "https://github.com/kepinserius/phishing-url-detector.git"
-Issues = "https://github.com/kepinserius/phishing-url-detector/issues"
+Homepage = "https://github.com/kepinserius/url_detect"
+Documentation = "https://github.com/kepinserius/url_detect#documentation"
+Repository = "https://github.com/kepinserius/url_detect.git"
+Issues = "https://github.com/kepinserius/url_detect/issues"
 
 [tool.setuptools]
 packages = ["api", "inference", "phishing_detector", "training"]

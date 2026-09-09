@@ -2,7 +2,7 @@
 
 ## Date: 2026-09-09
 
-### ✅ Components Tested
+###  Components Tested
 
 #### 1. Training Pipeline
 - [x] Data validation (duplicates, nulls, labels)
@@ -60,7 +60,7 @@
 - [x] Issue templates
 - [x] CODEOWNERS
 
-### ⚠️ Known Limitations
+###  Known Limitations
 
 1. **Feature Mismatch**:
    - Model trained on 50 PhiUSIIL features (URL + content)
@@ -78,7 +78,7 @@
    - No JavaScript execution
    - Cannot detect dynamic phishing pages
 
-### 📋 Pre-Release Checklist
+###  Pre-Release Checklist
 
 - [x] All tests pass
 - [x] API runs successfully
@@ -92,7 +92,7 @@
 - [ ] Initial git commit
 - [ ] Tag v0.1.0 release
 
-### 🔧 Recommended Before Public Release
+###  Recommended Before Public Release
 
 1. **Replace Placeholders**:
    ```bash
@@ -115,6 +115,6 @@
    - Benchmark inference latency
    - Test Docker deployment
 
-### ✅ Status: READY FOR RELEASE (with noted limitations)
+###  Status: READY FOR RELEASE (with noted limitations)
 
 The project is production-ready for open-source release with clear documentation of limitations.

@@ -407,7 +407,7 @@ Target architecture:
 # 13. Recommended Repository Structure
 
 ```text
-phishing-url-detector/
+url_detect/
 │
 ├── AGENTS.md
 ├── README.md
@@ -774,7 +774,7 @@ Quick start should ideally be:
 
 ```bash
 git clone ...
-cd phishing-url-detector
+cd url_detect
 docker compose up
 ```
 

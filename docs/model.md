@@ -299,6 +299,6 @@ result = predictor.predict("https://example.com")
 
 ## Support
 
-- Model issues: https://github.com/your-username/phishing-url-detector/issues
+- Model issues: https://github.com/your-username/url_detect/issues
 - Training questions: See `CONTRIBUTING.md`
 - Security concerns: `SECURITY.md`

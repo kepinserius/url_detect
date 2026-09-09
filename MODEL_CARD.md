@@ -77,7 +77,7 @@
 5. **Feature availability**: Some features (e.g., LineOfCode, HasTitle) require HTML content, not just URL string.
 
 ### False Negatives Risk
-**⚠️ False Negatives Risk**
+** False Negatives Risk**
 **Critical risk**: Missing a phishing URL exposes users to security risk. This model achieves 0% false negative rate on our test set (36 URLs), but real-world phishing may include new patterns not represented. Use this model as one signal among many security layers, not the sole decision-maker.
 
 ### False Positives Risk
@@ -105,10 +105,10 @@ Legitimate URLs misclassified as phishing can disrupt user workflows. On our tes
 ## Contact & Feedback
 
 Report issues or provide feedback via:
-- GitHub Issues: https://github.com/kepinserius/phishing-url-detector/issues
+- GitHub Issues: https://github.com/kepinserius/url_detect/issues
 - Security concerns: security@phishing-detector.kepinserius.dev
 
 ## References
 
 - UCI PhiUSIIL Dataset: https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset
-- Model repository: https://github.com/kepinserius/phishing-url-detector
+- Model repository: https://github.com/kepinserius/url_detect

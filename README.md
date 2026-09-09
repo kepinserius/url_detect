@@ -41,28 +41,28 @@ No URL fetching, no HTML analysis—just fast static URL analysis.
 ## Features
 
 ### Core Features
-- ✅ **ML-based detection**: XGBoost classifier trained on 235K+ URLs
-- ✅ **Static analysis only**: No auto-fetching (SSRF-safe)
-- ✅ **REST API v1**: FastAPI-based with async support
-- ✅ **Python SDK**: Easy integration in Python apps
+-  **ML-based detection**: XGBoost classifier trained on 235K+ URLs
+-  **Static analysis only**: No auto-fetching (SSRF-safe)
+-  **REST API v1**: FastAPI-based with async support
+-  **Python SDK**: Easy integration in Python apps
 
 ### Security & Privacy
-- ✅ **API authentication**: X-API-Key header
-- ✅ **Rate limiting**: Per-IP & per-API-key quotas
-- ✅ **PII redaction**: Tokens, passwords, emails auto-redacted in logs
-- ✅ **No data retention**: URL submissions not stored by default
+-  **API authentication**: X-API-Key header
+-  **Rate limiting**: Per-IP & per-API-key quotas
+-  **PII redaction**: Tokens, passwords, emails auto-redacted in logs
+-  **No data retention**: URL submissions not stored by default
 
 ### Enterprise Features
-- ✅ **Prometheus metrics**: Real-time observability
-- ✅ **Structured logging**: JSON logs for SIEM integration
-- ✅ **Model versioning**: Multi-model registry
-- ✅ **Docker-ready**: Containerized deployment
+-  **Prometheus metrics**: Real-time observability
+-  **Structured logging**: JSON logs for SIEM integration
+-  **Model versioning**: Multi-model registry
+-  **Docker-ready**: Containerized deployment
 
 ### Developer Experience
-- ✅ **Self-hosted**: Run with `docker-compose` or `pip install`
-- ✅ **CI/CD**: GitHub Actions for automated testing
-- ✅ **Testing suite**: Unit, integration, load tests
-- ✅ **Comprehensive docs**: Architecture, API, deployment guides
+-  **Self-hosted**: Run with `docker-compose` or `pip install`
+-  **CI/CD**: GitHub Actions for automated testing
+-  **Testing suite**: Unit, integration, load tests
+-  **Comprehensive docs**: Architecture, API, deployment guides
 
 ---
 
@@ -147,7 +147,7 @@ curl http://localhost:8000/metrics
 ```bash
 pip install -e .
 # or
-pip install phishing-url-detector
+pip install url_detect
 ```
 
 ### Usage
@@ -199,7 +199,7 @@ print(f"API Status: {health['status']}")
 | Endpoint | Method | Auth | Description |
 |----------|--------|------|-------------|
 | `/health` | GET | ❌ | Health check |
-| `/v1/check` | POST | ✅ | Check URL for phishing |
+| `/v1/check` | POST |  | Check URL for phishing |
 | `/metrics` | GET | ❌ | Prometheus metrics |
 | `/docs` | GET | ❌ | Swagger UI (interactive API docs) |
 

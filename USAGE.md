@@ -7,8 +7,8 @@
 ## Local Development
 1. Clone the repository:
    ```bash
-   git clone https://github.com/kepinserius/phishing-url-detector.git
-   cd phishing-url-detector
+   git clone https://github.com/kepinserius/url_detect.git
+   cd url_detect
    ```
 
 2. Install dependencies:
