@@ -4,8 +4,8 @@ type: software
 title: "Phishing URL Detector"
 version: 0.1.0
 date-released: 2026-09-09
-url: "https://github.com/your-username/phishing-url-detector"
-repository-code: "https://github.com/your-username/phishing-url-detector"
+url: "https://github.com/kepinserius/url_detect"
+repository-code: "https://github.com/kepinserius/url_detect"
 license: MIT
 authors:
   - family-names: "Phishing URL Detector"

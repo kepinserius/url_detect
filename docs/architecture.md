@@ -4,25 +4,25 @@
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                   Third-Party Applications           │
-│  (Browser extensions, Security tools, APIs)        │
+│                   Third-Party Applications          │
+│  (Browser extensions, Security tools, APIs)         │
 └─────────────────────────┬───────────────────────────┘
                           │ HTTPS / REST API
                           ▼
 ┌─────────────────────────────────────────────────────┐
-│                 Phishing URL Detector API            │
-│                 (FastAPI application)                │
+│                 Phishing URL Detector API           │
+│                 (FastAPI application)               │
 ├─────────────────────────────────────────────────────┤
-│  • Authentication (API Keys)                         │
+│  • Authentication (API Keys)                        │
 │  • Rate Limiting & Quota Management                 │
 │  • Structured Logging (with PII redaction)          │
-│  • Prometheus Metrics                                │
-│  • Privacy Middleware                                │
+│  • Prometheus Metrics                               │
+│  • Privacy Middleware                               │
 └─────────────────────────┬───────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────┐
-│                Inference Engine                      │
+│                Inference Engine                     │
 │  • Feature Extractor (static URL analysis)          │
 │  • Model Predictor (XGBoost / Random Forest)        │
 │  • Model Registry & Versioning                      │
@@ -30,7 +30,7 @@
                           │
                           ▼
 ┌─────────────────────────────────────────────────────┐
-│                Model & Data Layer                    │
+│                Model & Data Layer                   │
 │  • Machine Learning Models (XGBoost, RF, etc.)      │
 │  • Feature Names & Metadata                         │
 │  • Dataset (PhiUSIIL - externally sourced)          │

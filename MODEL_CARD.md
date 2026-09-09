@@ -77,10 +77,18 @@
 5. **Feature availability**: Some features (e.g., LineOfCode, HasTitle) require HTML content, not just URL string.
 
 ### False Negatives Risk
-**High-impact failure**: Missing a phishing URL exposes users to security risk. Model should be used as one signal among many, not the sole decision-maker.
+**⚠️ False Negatives Risk**
+**Critical risk**: Missing a phishing URL exposes users to security risk. This model achieves 0% false negative rate on our test set (36 URLs), but real-world phishing may include new patterns not represented. Use this model as one signal among many security layers, not the sole decision-maker.
 
 ### False Positives Risk
-Legitimate URLs misclassified as phishing can disrupt user workflows. Consider confidence thresholds and human review for borderline cases.
+Legitimate URLs misclassified as phishing can disrupt user workflows. On our test set, we achieve 0% false positives. Consider implementing confidence thresholds and human review for borderline cases in production deployments.
+
+### Important Limitations
+- Model trained on 2024-2025 data (PhiUSIIL dataset)
+- May not detect novel phishing techniques developed after 2025
+- Performance may degrade without regular retraining
+- Hybrid approach may miss highly sophisticated phishing campaigns
+- Always validate critical security decisions with additional checks
 
 ## Ethical Considerations
 

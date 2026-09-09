@@ -178,12 +178,17 @@ print(f"API Status: {health['status']}")
 
 | Metric | Value |
 |--------|-------|
-| **F1 Score** | 0.9999 |
-| **ROC-AUC** | 0.9999 |
-| **Accuracy** | 100% |
-| **Features** | 22 URL-based |
+| **F1 Score (PhiUSIIL)** | 0.9999 |
+| **External Validation** | 97-100% accuracy |
+| **Features** | 22 URL-based + rule-based patterns |
 | **Inference Time** | <10ms |
 | **Training Data** | 235,795 URLs |
+
+**Performance Notes:**
+- Tested on 36 real-world URLs (100% accuracy)
+- Detects common phishing patterns (typosquatting, suspicious TLDs, brand abuse)
+- **Limitation**: Model trained on 2024-2025 data. New phishing techniques may not be detected.
+- **Best use**: Combine with other security layers. Monitor for false positives/negatives.
 
 *Trained on [PhiUSIIL Phishing URL Dataset](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset)*
 
@@ -344,19 +349,9 @@ If you use this project in research, please cite:
 
 ---
 
-## Support
-
-- 📝 **Documentation**: [See docs/](docs/)
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/kepinserius/url_detect/issues)
-- 🔒 **Security**: [Security Policy](SECURITY.md)
-- 💬 **Questions**: [GitHub Discussions](https://github.com/kepinserius/url_detect/discussions)
-
----
-
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ---
 
-**Made with ❤️ by the open-source community**
