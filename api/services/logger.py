@@ -1,6 +1,6 @@
 import logging
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from api.middleware.privacy import PrivacyManager
 
 class StructuredLogger:
@@ -15,7 +15,7 @@ class StructuredLogger:
     def log_prediction(self, url: str, prediction: str, risk_score: float, api_key_hash: str):
         sanitized_url = PrivacyManager.sanitize_url(url)
         log_entry = {
-            "timestamp": datetime.utcnow().isoformat(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "event": "prediction",
             "url_sanitized": sanitized_url,
             "prediction": prediction,

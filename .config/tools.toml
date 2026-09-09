@@ -1,0 +1,41 @@
+# Configuration Files
+
+## Black
+```toml
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+include = '\.pyi?$'
+```
+
+## Ruff
+```toml
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+```
+
+## MyPy
+```ini
+[mypy]
+python_version = 3.9
+check_untyped_defs = true
+ignore_missing_imports = true
+```
+
+## Git Attributes
+```gitattributes
+*.py linguist-language=Python
+```
+
+## VS Code Settings
+```json
+{
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "python.linting.enabled": true,
+  "python.formatting.provider": "black",
+  "ruff.enable": true
+}
+```

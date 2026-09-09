@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Phishing URL Detector"
+version: 0.1.0
+date-released: 2026-09-09
+url: "https://github.com/your-username/phishing-url-detector"
+repository-code: "https://github.com/your-username/phishing-url-detector"
+license: MIT
+authors:
+  - family-names: "Phishing URL Detector"
+    given-names: "Contributors"
+keywords:
+  - phishing
+  - machine-learning
+  - security
+  - url-detection
+  - fastapi
+  - xgboost
+abstract: "Open-source phishing URL detection engine based on Machine Learning. Provides REST API for easy integration into third-party applications."

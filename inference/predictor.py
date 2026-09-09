@@ -1,25 +1,35 @@
 import os
 import joblib
 import pandas as pd
-from inference.features.extractor import URLFeatureExtractor
+from inference.features.advanced_extractor import PhiUSIILFeatureExtractor
 
 class Predictor:
     def __init__(self):
-        model_path = os.getenv("MODEL_PATH", "models/phishing_model.joblib")
-        feature_path = "models/feature_names.joblib"
+        # Use URL-only model (22 features) instead of full 50-feature model
+        model_path = os.getenv("MODEL_PATH", "models/phishing_url_only_model.joblib")
+        feature_path = os.getenv("FEATURE_PATH", "models/url_only_feature_names.joblib")
         
         self.model = joblib.load(model_path)
         self.feature_names = joblib.load(feature_path)
+        
+        # Verify feature extraction compatibility
+        sample_features = PhiUSIILFeatureExtractor.extract_all("https://example.com")
+        missing_features = [f for f in self.feature_names if f not in sample_features]
+        if missing_features:
+            print(f"Warning: {len(missing_features)} training features not in extractor")
 
     def predict(self, url: str) -> dict:
-        raw_features = URLFeatureExtractor.extract_features(url)
+        raw_features = PhiUSIILFeatureExtractor.extract_all(url)
         
         # Build dataframe aligning with training features
-        # For simplicity in MVP, we fill missing columns with 0
         df = pd.DataFrame([raw_features])
+        
+        # Ensure all model features are present
         for col in self.feature_names:
             if col not in df.columns:
                 df[col] = 0
+        
+        # Reorder columns to match training
         df = df[self.feature_names]
 
         prob = float(self.model.predict_proba(df)[0][1])
