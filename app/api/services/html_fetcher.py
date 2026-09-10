@@ -10,6 +10,7 @@ Safe HTML fetching with:
 
 import re
 import socket
+import asyncio
 import httpx
 import logging
 
@@ -162,18 +163,14 @@ html_fetcher = HTMLFetcher()
 
 
 # Sync wrapper for synchronous usage
-def fetch_html(url: str) -> Optional[Dict[str, Any]]:
+def fetch_html(url: str) -> dict | None:
     """Synchronous HTML fetch wrapper."""
     try:
-        return asyncio.run(html_fetcher.fetch(url))
-    except RuntimeError:
-        # Event loop already running, use sync client
-        client = httpx.Client(
+        with httpx.Client(
             timeout=httpx.Timeout(FETCH_TIMEOUT),
             follow_redirects=True,
             verify=True
-        )
-        try:
+        ) as client:
             response = client.get(url)
             if len(response.content) > MAX_CONTENT_SIZE:
                 return None
@@ -184,8 +181,6 @@ def fetch_html(url: str) -> Optional[Dict[str, Any]]:
                 "url": str(response.url),
                 "size_bytes": len(response.content)
             }
-        except Exception as e:
-            logger.warning(f"Sync fetch error for {url}: {e}")
-            return None
-        finally:
-            client.close()
+    except Exception as e:
+        logger.warning(f"Sync fetch error for {url}: {e}")
+        return None
